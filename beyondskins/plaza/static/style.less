@@ -1,0 +1,495 @@
+/******************************************
+
+ Change values and compile your .less file
+ This will generate your final .css file
+
+******************************************/
+
+// fonts
+@import url(http://fonts.googleapis.com/css?family=Unica+One);
+
+// Basic Colors
+@main-bg: #fff; 
+@main-color: #285c6a;
+
+// content
+@content-color: #fff;
+
+// colunas
+@main-width: 80%;
+@coluna1: 25%;
+@coluna2: 25%;
+
+// header 
+@header: #fff;
+@header-link: #ccc; 
+@header-text: #ccc;
+
+// navegacao
+@nav: #fff;
+@nav-link: #343233;
+
+// text and link styles
+@main-font: 'Unica One', Verdana, Helvetica, sans-serif;
+@text-font: arial, helvetica, sans-serif;
+@main-text: contrast(@main-bg, #333, #fff);
+@title-font: 'Unica One', Georgia, serif;
+@title-color: darken(@main-color, 10%);
+@main-link: darken(@main-color, 10%);
+@secondary-link: darken(@main-color, 20%);
+
+/******************************************
+
+  You don't need to edit the lines below
+
+******************************************/
+
+/**** GRID ****/
+
+/* Very very simple, semantic and human friendly columns */
+
+/* Column size */
+#main {
+	.wrapper-size
+}
+.portaltype-news-item.section-portifolio #main {
+    max-width: 778px;
+}
+#main-content {width: auto;}
+#column-one   {width:  @coluna1;}
+#column-two   {width:  @coluna2;}
+
+/* old fashion table layout */
+#main {display: table;}
+#main-content, #column-one, #column-two {display: table-cell; vertical-align: top;}
+
+/* margin columns */
+#main-content {padding: 0;}
+#column-one {padding-right: 2%;}
+#column-two {padding-left: 2%;}
+#portal-column-content {width: 100%; margin-left: -100%;}
+
+/**** Basic Styles ****/
+
+// Additional styles
+@border: darken(@main-bg, 15%) 1px solid;
+.gradient {
+	background: -webkit-linear-gradient(@main-bg, #f1f1f1); /* For Safari */
+	background: -o-linear-gradient(@main-bg, #f1f1f1); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(@main-bg, #f1f1f1); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(@main-bg, #f1f1f1); /* Standard syntax (must be last) */
+}
+.wrapper-size {
+	margin: 0 auto;
+	width: @main-width;
+	max-width: 1200px;
+}
+.shadow {
+	box-shadow: 0 2px 3px #ccc;
+}
+.text-shadow {
+	text-shadow: 1px 1px 2px contrast(@header-link);
+	-webkit-text-stroke: 1px @header-link;
+}
+
+
+/********** Basic styles **********/
+body {
+	color: @main-text; 
+	font-family: @main-font;
+	margin: 0;
+	padding-top: 6em; /* more than header height */
+}
+
+a:link,
+a:visited, 
+#content a:link, 
+dl.portlet a:link {
+	color:@main-link;
+}
+.state-published {
+  color:@main-link !important;
+}
+a:hover {
+	color:@secondary-link;
+}
+
+#content a:hover,
+dl.portlet a:hover {
+    color: @secondary-link !important; 
+}
+
+.clear {
+	clear: both;
+}
+
+/********** Main container **********/
+
+#wrapper {
+	padding: 0;
+	margin-top: 0;
+}
+
+.section-front-page #wrapper {
+	   margin-top: 8em;
+}
+
+#main {
+	background: @content-color;
+	padding: 2em;
+}
+
+#user {
+	float: right;
+}
+
+/********** Header **********/
+
+
+#portal-personaltools {
+	position: fixed;
+	top: 70px;
+	z-index: 10000;
+}
+
+/* area do topo */
+header {
+	background: @header;
+	color: @header-text;
+	position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    z-index: 1000;
+    border-bottom: 1px solid #f1f1f1;
+    opacity: 0.95;
+    -webkit-box-shadow: 0px 11px 26px 0px rgba(50, 50, 50, 0.71);
+    -moz-box-shadow:    0px 11px 26px 0px rgba(50, 50, 50, 0.71);
+    box-shadow:         0px 11px 26px 0px rgba(50, 50, 50, 0.71);
+    width: 100%;
+    height: 70px;
+}
+header>div {
+	padding: 0 8em 0 8em;
+}
+header a:link,
+header a:visited {
+    color: @header-link;
+    text-decoration: none;
+}
+header a:hover {
+    color: darken(contrast(@header-link), 10%);
+}
+
+#portal-logo {
+	width: 25%;
+	float: left;
+    margin-top: 0.3em;
+}
+#portal-logo a {
+	font-family: @title-font;
+	color: @header-link;
+	font-size: 4em;
+	font-weight: bold;
+	line-height: 1em;
+	.text-shadow;
+}
+
+#portal-logo img {
+	float: left;
+	margin: 0.1em 0 0 0;
+	max-height: 80px;
+}
+
+#portal-searchbox{
+    margin-top: 1.85em;
+}
+
+#portal-searchbox input.searchField {
+    border: 1px solid #CCCCCC;
+    padding: 0.1em;
+    border-radius:5px;
+}
+
+
+/* Navigation */
+
+nav {
+	background: @nav;
+	color: @nav-link;
+	float: right;
+}
+nav ul {
+	float: right;
+	margin: 0;
+}
+nav li {
+	display: inline-block;
+	height: 70px;
+	margin: 0 0 0 1px;
+}
+nav li a:link {
+    font-size: 110%;
+	text-decoration: none;
+	display: block;
+	padding: 1.3em 0.5em 1em 0.5em;
+}
+nav li#portaltab-arquitetura-sustentavel a {
+	padding-top: 2.75em;
+}
+nav li a:link,
+nav li a:visited {
+    color: @nav-link;
+}
+nav li a:hover {
+    color: @nav-link;
+    opacity: 0.8;
+}
+
+/* slide show */
+.cycle-slideshow {
+	width: 768px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+.cycle-slideshow img {
+	max-width: 100%;
+	height: auto;
+}
+#slideshow-capa {
+	margin-top: -150px;
+	width: 100%;
+	border: none;
+}
+@media (min-height: 800px) {
+	#slideshow-capa {
+		margin-top: -50px;
+	}
+}
+.cycle-overlay {
+	padding: 15px;
+}
+/* pager */
+.cycle-pager { 
+    text-align: center; 
+    width: 100%; 
+    z-index: 500; 
+    position: absolute; 
+    bottom: 50px; 
+    overflow: hidden;
+}
+.cycle-pager span { 
+    font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+    display: inline-block; color: #ddd; cursor: pointer; 
+}
+.cycle-pager span.cycle-pager-active { color: #a6ce39;}
+.cycle-pager > * { cursor: pointer;}
+
+.hiddenStructure {
+	display: none;
+}
+
+
+    
+    
+/********** Content **********/
+/* breadcrumb */
+#portal-breadcrumbs {
+	font-size: 80%;
+	clear: both;
+	.wrapper-size
+
+}
+#portal-breadcrumbs a, .breadcrumbSeparator {
+	
+}
+.section-front-page #portal-breadcrumbs {
+    display: none;
+}
+
+.subsection-capa .listingBar {
+	display: none;
+}
+div.listingBar a:hover {
+	color: #a6ce39;
+}
+
+/* text styles */
+p {
+	line-height: 1.4em;
+	font-family: @text-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @title-font;
+	font-weight: normal;
+}
+
+h1 {
+    color: @title-color;
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 2.5em;
+    line-height: 1em;
+}
+h2 {
+    color: @title-color;    
+    line-height: 1em;
+	margin-bottom: 0.5em;
+}
+#content .documentDescription, #content #description {
+    color: lighten(@main-text, 10%); 
+    font-weight: normal;
+    margin: 0.5em 0 2em 0;
+}
+
+/********** Tiles **********/
+.tile img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*********** Portlets ***********/
+
+/* general styles */
+.portletHeader,
+dl.portlet dt.portletHeader {
+    border-bottom: @border;
+	font-weight: bold;
+    background: transparent;
+    color: @title-color;
+}
+.portletHeader a,
+dl.portlet dt.portletHeader a {
+    color: @title-color;
+}
+.portlet {
+    margin-bottom: 2em;
+    padding: 4px 0;
+}
+
+/* lists inside columns */
+aside dl, 
+aside dd, 
+aside ul {
+	padding: 0;
+	margin: 0;
+}
+aside a {
+	text-decoration: none;
+}
+
+/* portlet navigation */
+.portletNavigationTree ul {
+	margin: 0;
+}
+.portletNavigationTree li {
+	list-style-position: inside;
+}
+.portletNavigationTree .navTreeLevel0>li {
+	border-bottom: @border;
+	list-style: none;
+}
+.portletNavigationTree a {
+	display: block;
+	padding: 0.3em 0.3em 0.3em 0.5em;
+}
+.portletNavigationTree a:hover {
+	background: darken(@main-bg, 5%);
+}
+.navTreeLevel2 a {padding-left: 1em;}
+.navTreeLevel3 a {padding-left: 2em;}
+.navTreeLevel4 a {padding-left: 3em;}
+.navTreeLevel5 a {padding-left: 4em;}
+.navTreeLevel6 a {padding-left: 5em;}
+
+/* forms */
+.field input[type="text"][size] {
+	height: 2em;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+#content textarea {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+/********** Footer **********/
+footer {
+	border-top: @border;
+	margin-top: 2em;
+    font-size: 80%;
+    padding-left: 11em;
+    padding-right: 11em;
+}
+
+footer p {
+	margin-bottom: 2em;
+}
+ul.redes-sociais {
+	margin-top: 1em;
+}
+ul.redes-sociais li {
+	float: right;
+	margin-left: 1em;
+}
+ul.redes-sociais a {
+	color: #ccc;
+}
+
+#footer-info {
+	padding-top: 10px;
+}
+#portal-siteactions {
+	text-align:left;
+	padding-bottom: 0;
+}
+
+
+/**** RESPONSIVE ***/
+
+#btnav i {display:none;}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+  
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+
+#portal-logo { float: left;}
+
+#portal-breadcrumbs {display:none;}
+
+#main-header {height:45px;}
+
+#portal-logo a img {margin-top:5px;width:2em;}
+
+#btnav {background:transparent url(img/btmenu.jpg) no-repeat 0 0;width:153px;height:40px;display:block;top:0;position:absolute;}
+
+#btnav ul {display:none;}
+
+div:hover#btnav ul {padding-top:10px;display:block;top:40px;position:absolute;background:@nav;}
+div:hover#btnav ul li a {padding:10px;}
+
+#btnav i {display:block;font-size: 2em;padding-top:10px;}
+
+header > div {width:93%;}
+
+#main-content, #column-one, #column-two {
+    display: block;
+    float: none;
+    width: 100%;
+}
+
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+}
