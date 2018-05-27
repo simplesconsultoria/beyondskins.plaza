@@ -5,7 +5,7 @@ version = '0.1'
 
 setup(name='beyondskins.plaza',
       version=version,
-      description="Beyondskins Plaza",
+      description="Beyondskins Plaza, is an installable Diazo theme for Plone 4",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
