@@ -7,7 +7,7 @@
 ******************************************/
 /******************************************
 
-  You dont need to edit the lines below
+  You don't need to edit the lines below
 
 ******************************************/
 /**** GRID ****/
@@ -40,7 +40,7 @@
   display: table-cell;
   vertical-align: top;
 }
-/* margin collumns */
+/* margin columns */
 #main-content {
   padding: 0;
 }
@@ -130,7 +130,7 @@ dl.portlet a:hover {
   top: 70px;
   z-index: 10000;
 }
-/* area do topo */
+/* header area */
 header {
   background: #ffffff;
   color: #cccccc;
